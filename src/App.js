@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+// src/App.js
+import React, { useState } from 'react';
+import TaskForm from './Components/TaskForm';
+import TaskList from './Components/TaskLIst';
+import SearchBar from './Components/SearchBar';
+// In App.js or index.js
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+<div className="container mx-auto p-4 md:p-6 lg:p-8"></div>
+ 
+ 
+ 
+ 
+ return (
+    
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">To-Do List</h1>
+      <TaskForm />
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <TaskList searchTerm={searchTerm} />
+      
     </div>
   );
-}
+};
 
 export default App;
